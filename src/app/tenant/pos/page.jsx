@@ -189,8 +189,9 @@ export default function POSPage() {
   };
 
   return (
-    <div className="space-y-4">
-      {/* POS Top Header */}
+    <>
+      <div className="space-y-4 print:hidden">
+        {/* POS Top Header */}
       <div className="flex items-center justify-between">
         <div>
           <div className="flex items-center gap-2">
@@ -369,6 +370,7 @@ export default function POSPage() {
           </div>
         </div>
       </div>
+      </div>
 
       {/* Payment Checkout Modal */}
       <PaymentModal
@@ -386,6 +388,6 @@ export default function POSPage() {
         onClose={() => setCompletedSale(null)}
         onNewBill={handleStartNewBill}
       />
-    </div>
+    </>
   );
 }

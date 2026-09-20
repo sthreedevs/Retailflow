@@ -138,3 +138,35 @@
     appearance: textfield !important;
   }
 }
+
+@media print {
+  /* Hide all application headers, navigation, sidebars, buttons, and marked elements */
+  header,
+  nav,
+  aside,
+  footer,
+  button,
+  .print\:hidden,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset document flow for clean single-page thermal/invoice printing */
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    size: auto;
+    margin: 4mm auto;
+  }
+}

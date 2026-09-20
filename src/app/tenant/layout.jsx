@@ -26,17 +26,19 @@ export default async function TenantLayout({ children }) {
   const isImpersonating = Boolean(session?.impersonatedBy);
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans print:min-h-0 print:bg-white print:text-black">
       {isImpersonating && (
-        <ImpersonationBanner
-          storeName={session.storeName}
-          tenantId={session.tenantId}
-          adminEmail={session.impersonatedBy.email}
-        />
+        <div className="print:hidden">
+          <ImpersonationBanner
+            storeName={session.storeName}
+            tenantId={session.tenantId}
+            adminEmail={session.impersonatedBy.email}
+          />
+        </div>
       )}
 
       {/* Tenant Navigation Header */}
-      <header className="border-b border-neutral-800 bg-neutral-900/60 backdrop-blur-md sticky top-0 z-30">
+      <header className="border-b border-neutral-800 bg-neutral-900/60 backdrop-blur-md sticky top-0 z-30 print:hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
@@ -131,7 +133,7 @@ export default async function TenantLayout({ children }) {
         </div>
       </header>
 
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 print:p-0 print:m-0 print:max-w-none">
         {children}
       </main>
     </div>
