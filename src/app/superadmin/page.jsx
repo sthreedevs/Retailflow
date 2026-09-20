@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { RefreshCw, Plus, Store, RotateCw, AlertCircle, History } from 'lucide-react';
-import { Button } from '@/components/ui/button.jsx';
 import { PlatformPulseBar } from '@/components/superadmin/PlatformPulseBar.jsx';
 import { PlatformGrowthChart } from '@/components/superadmin/PlatformGrowthChart.jsx';
 import { TopStoresTable } from '@/components/superadmin/TopStoresTable.jsx';
@@ -130,16 +129,18 @@ export default function SuperAdminDashboard() {
             {syncing ? 'Syncing...' : 'Sync Summaries'}
           </button>
 
-          <Link href="/superadmin/tenants/new">
-            <Button size="sm" variant="default" className="text-xs gap-1.5 rounded-xl">
-              <Plus className="w-3.5 h-3.5" /> Provision Store
-            </Button>
+          <Link
+            href="/superadmin/tenants/new"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-colors shadow-sm shadow-emerald-950/40"
+          >
+            <Plus className="w-3.5 h-3.5" /> Provision Store
           </Link>
 
-          <Link href="/superadmin/tenants">
-            <Button size="sm" variant="outline" className="text-xs gap-1.5 rounded-xl">
-              <Store className="w-3.5 h-3.5" /> Manage Tenants
-            </Button>
+          <Link
+            href="/superadmin/tenants"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-neutral-200 bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 hover:text-white rounded-xl transition-colors"
+          >
+            <Store className="w-3.5 h-3.5 text-neutral-400" /> Manage Tenants
           </Link>
 
           <button

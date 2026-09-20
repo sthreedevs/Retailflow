@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { Button } from '@/components/ui/button.jsx';
 
 export function SuperAdminHeader() {
   const router = useRouter();
@@ -53,20 +52,20 @@ export function SuperAdminHeader() {
           </nav>
         </div>
 
-        <div className="flex items-center gap-3">
-          <Link href="/superadmin/tenants/new">
-            <Button size="sm" variant="default" className="text-xs h-7">
-              + New Tenant
-            </Button>
+        <div className="flex items-center gap-2.5">
+          <Link
+            href="/superadmin/tenants/new"
+            className="inline-flex items-center px-3 py-1 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors shadow-sm shadow-emerald-950/30"
+          >
+            + Provision Store
           </Link>
-          <Button
-            size="sm"
-            variant="ghost"
+          <button
+            type="button"
             onClick={handleLogout}
-            className="text-xs text-neutral-400 hover:text-neutral-200 h-7"
+            className="inline-flex items-center px-2.5 py-1 text-xs font-medium text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800/60 rounded-lg transition-colors"
           >
             Sign Out
-          </Button>
+          </button>
         </div>
       </div>
     </header>
