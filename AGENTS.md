@@ -20,3 +20,6 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - **Delete After Use**: All test files (`.mjs`, `.js`), verification scripts, or scratch files used during testing must be deleted immediately after their use.
 - **No Lingering Test Artifacts**: Do not leave one-off scratch scripts or test files in the codebase.
 
+## Git & Version Control
+- **Never Git Commit or Push Without Explicit Permission**: NEVER run `git commit` or `git push` without explicit user permission or a direct user instruction in the prompt. Always leave changes uncommitted until the user explicitly requests a commit/push.
+
