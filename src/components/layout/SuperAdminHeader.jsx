@@ -10,9 +10,11 @@ export function SuperAdminHeader() {
   async function handleLogout() {
     try {
       await fetch('/api/auth/logout', { method: 'POST' });
-      router.push('/login');
+      router.push('/');
+      router.refresh();
     } catch {
-      router.push('/login');
+      router.push('/');
+      router.refresh();
     }
   }
 
